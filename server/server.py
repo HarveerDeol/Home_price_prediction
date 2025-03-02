@@ -1,12 +1,11 @@
 from flask import Flask, request, jsonify, render_template
 import util
-import os
 
-app = Flask(__name__, static_folder="../client", template_folder="../client")
+app = Flask(__name__, static_folder="../client/", template_folder="../client/")
 
 @app.route('/')
 def home():
-    return render_template("app.html")  # Ensure app.html is inside the client folder
+    return render_template("app.html")
 
 @app.route('/get_location_names', methods=['GET'])
 def get_location_names():
